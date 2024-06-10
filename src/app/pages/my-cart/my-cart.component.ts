@@ -23,4 +23,9 @@ export class MyCartComponent {
   public removeItem(item:any){
     this.cartService.removeItemFromCart(item)
   }
+
+  public removeQuanity(item:any){
+    console.log(item)
+    this.cartService.removeQuantity(item)
+  }
 }

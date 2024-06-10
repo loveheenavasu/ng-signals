@@ -50,5 +50,22 @@ export class CartService {
     });
   }
 
+  public removeQuantity(item: Product) {
+    this.cart.update((cart: ShoppingCart) => {
+      const existingItemIndex = cart.items.findIndex((i) => i.id === item.id);
+      if (existingItemIndex !== -1) {
+        const existingItem = cart.items[existingItemIndex];
+        if (existingItem.quantity > 1) {
+          existingItem.quantity--;
+          cart.totalAmount -= item.price;
+        } else {
+          // If the quantity is already 0, remove the item from the cart
+          cart.items.splice(existingItemIndex, 1);
+        }
+      }
+      return cart;
+    });
+  }
+
 
 }

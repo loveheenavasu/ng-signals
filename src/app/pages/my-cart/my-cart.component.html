@@ -29,7 +29,11 @@
               @for(key of cartProducts; track $index){
               <div class="col-sm-3">
                 <div class="thumb-wrapper">
-                  <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                  <span class="wish-icon"
+                    ><i
+                      class="fa fa-minus-square-o"
+                      (click)="removeQuanity(key)"></i
+                  ></span>
                   <div class="img-box">
                     <img [src]="key.imageUrl" class="img-fluid" alt="" />
                   </div>
@@ -57,6 +61,7 @@
                     <p class="item-price">
                       <b>${{ key.price }} x {{ key.quantity }} </b>
                     </p>
+
                     <button
                       class="btn btn-outline-danger my-3 my-sm-0 mx-4"
                       (click)="removeItem(key)">
@@ -65,10 +70,11 @@
                   </div>
                 </div>
               </div>
+              } @if(!cartProducts.length){
+              <p style="margin-top: 5em">
+                Oops! You haven't added any product yet! 😞
+              </p>
               }
-			@if(!cartProducts.length){
-				<p style="margin-top:5em">Oops! You haven't added any product yet! 😞</p>
-			}
             </div>
             @if(cartProducts.length){
             <div class="row mt-5">
