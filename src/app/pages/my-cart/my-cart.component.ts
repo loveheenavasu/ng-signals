@@ -1,5 +1,5 @@
+import { CartService } from './../service/cart.service';
 import { Component } from '@angular/core';
-import { CartService } from '../service/cart.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,9 +12,15 @@ import { Router } from '@angular/router';
 export class MyCartComponent {
   public cartProducts = this.cartService.getCartProducts().items;
 
-  constructor(private cartService: CartService , private router:Router ) {}
+  constructor(private cartService: CartService , private router:Router ) {
+    console.log(this.cartProducts, "cartproucts")
+  }
 
   public backTo(){
     this.router.navigateByUrl('/')
+  }
+
+  public removeItem(item:any){
+    this.cartService.removeItemFromCart(item)
   }
 }

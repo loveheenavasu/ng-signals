@@ -1,43 +1,102 @@
-
 <div class="container-xl">
-	<div class="row mt-4">
-		<div class="col-md-12">
-			<h2>Featured <b>Products</b></h2>
-			<div id="myproduct-main-cnt" class="product-main-cnt" data-ride="product-main-cnt" data-interval="0">
-			<!-- Wrapper for product-main-cnt items -->
-			<div class="product-main-cnt-inner">
-                <p (click)="backTo()" style="cursor:pointer"> < Back To Shopping</p>
-				<div class="item product-main-cnt-item active">
-					<div class="row">
-                        @for(key of cartProducts; track $index){
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img [src]="key.imageUrl" class="img-fluid" alt="">									
-								</div>
-								<div class="thumb-content">
-									<h4>{{key.name}}</h4>									
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
-									<p class="item-price"><b>${{key.price}}</b></p>
-								</div>						
-							</div>
-						</div>
-                    }
-					</div>
-				</div>
-			
-			</div>
-		
-		</div>
-		</div>
-	</div>
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h2>My <b>Cart</b></h2>
+      <div
+        id="myproduct-main-cnt"
+        class="product-main-cnt"
+        data-ride="product-main-cnt"
+        data-interval="0">
+        <!-- Wrapper for product-main-cnt items -->
+        <div class="product-main-cnt-inner">
+          <div class="d-flex">
+            <div>
+              <h6>
+                Total items in your cart : <b>{{ cartProducts.length }}</b>
+              </h6>
+            </div>
+            <div class="ms-auto">
+              <button
+                class="btn btn-outline-success my-2 my-sm-0 mx-4"
+                (click)="backTo()">
+                Back To Shopping
+              </button>
+            </div>
+          </div>
+
+          <div class="item product-main-cnt-item active">
+            <div class="row">
+              @for(key of cartProducts; track $index){
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                  <div class="img-box">
+                    <img [src]="key.imageUrl" class="img-fluid" alt="" />
+                  </div>
+                  <div class="thumb-content">
+                    <h4>{{ key.name }}</h4>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item">
+                          <i class="fa fa-star"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="fa fa-star"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="fa fa-star"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="fa fa-star"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="fa fa-star-o"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <p class="item-price">
+                      <b>${{ key.price }} x {{ key.quantity }} </b>
+                    </p>
+                    <button
+                      class="btn btn-outline-danger my-3 my-sm-0 mx-4"
+                      (click)="removeItem(key)">
+                      Remove Item
+                    </button>
+                  </div>
+                </div>
+              </div>
+              }
+			@if(!cartProducts.length){
+				<p style="margin-top:5em">Oops! You haven't added any product yet! 😞</p>
+			}
+            </div>
+            @if(cartProducts.length){
+            <div class="row mt-5">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for(key of cartProducts; track $index){
+                  <tr>
+                    <td>{{ key.name }}</td>
+                    <td>{{ key.quantity }}</td>
+                    <td>$ {{ key.price * key.quantity }}</td>
+                    <td></td>
+                  </tr>
+
+                  }
+                </tbody>
+              </table>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

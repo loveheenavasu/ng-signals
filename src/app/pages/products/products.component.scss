@@ -1,3 +1,5 @@
+@import "../../../assets/scss/common.scss";
+
 h2 {
 	color: #000;
 	font-size: 26px;
@@ -61,15 +63,8 @@ h2::after {
 }
 .product-main-cnt .thumb-content .btn {
 	color: #7ac400;
-	font-size: 11px;
-	text-transform: uppercase;
-	font-weight: bold;
-	background: none;
 	border: 1px solid #7ac400;
-	padding: 6px 14px;
-	margin-top: 5px;
-	line-height: 16px;
-	border-radius: 20px;
+	@extend %basic
 }
 .product-main-cnt .thumb-content .btn:hover, .product-main-cnt .thumb-content .btn:focus {
 	color: #fff;

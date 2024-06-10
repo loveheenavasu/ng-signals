@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CartService } from '../service/cart.service';
 import { Router } from '@angular/router';
-import { Product, ShoppingCart } from '../service/product.interface';
-
+import { Product } from '../service/product.interface';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -27,6 +27,22 @@ export class ProductsComponent {
 
   public addToCart(product:any){
     this.cartService.addToCart(product);
-    this.router.navigateByUrl('/my-cart')
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "bottom-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast:any) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    Toast.fire({
+      icon: "success",
+      text: "Added to cart!"
+    });
+    
+    // this.router.navigateByUrl('/my-cart')
   }
 }

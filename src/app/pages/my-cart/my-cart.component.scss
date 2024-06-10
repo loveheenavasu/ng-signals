@@ -1,3 +1,5 @@
+@import "../../../assets/scss/common.scss";
+
 h2 {
 	color: #000;
 	font-size: 26px;
@@ -59,21 +61,35 @@ h2::after {
 .product-main-cnt .item h4, .product-main-cnt .item p, .product-main-cnt .item ul {
 	margin-bottom: 5px;
 }
-.product-main-cnt .thumb-content .btn {
+
+.product-main-cnt .thumb-content .btn-outline-success {
 	color: #7ac400;
-	font-size: 11px;
-	text-transform: uppercase;
-	font-weight: bold;
-	background: none;
 	border: 1px solid #7ac400;
-	padding: 6px 14px;
-	margin-top: 5px;
-	line-height: 16px;
-	border-radius: 20px;
+	@extend %basic
 }
-.product-main-cnt .thumb-content .btn:hover, .product-main-cnt .thumb-content .btn:focus {
+
+
+.product-main-cnt .thumb-content .btn-outline-danger {
+	color: #7ac400;
+	border: 1px solid #7ac400;
+	@extend %basic
+}
+
+.product-main-cnt .thumb-content .btn-outline-danger {
+	color: #ff3145;
+	border: 1px solid #ff3145;
+	@extend %basic
+}
+
+.product-main-cnt .thumb-content .btn-outline-success:hover, .product-main-cnt .thumb-content .btn-outline-success:focus {
 	color: #fff;
 	background: #7ac400;
+	box-shadow: none;
+}
+
+.product-main-cnt .thumb-content .btn-outline-danger:hover, .product-main-cnt .thumb-content .btn-outline-danger:focus {
+	color: #fff;
+	background: #ff3145;
 	box-shadow: none;
 }
 .product-main-cnt .thumb-content .btn i {

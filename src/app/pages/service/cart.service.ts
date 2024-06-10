@@ -23,10 +23,32 @@ export class CartService {
 
   public addToCart(item: Product) {
     this.cart.update((cart: ShoppingCart) => {
-      cart.items.push(item);
+      const existingItemIndex = cart.items.findIndex((i) => i.id === item.id);
+      if (existingItemIndex !== -1) {
+        cart.items[existingItemIndex].quantity++;
+      } else {
+        cart.items.push({...item, quantity: 1 });
+      }
       cart.totalAmount += item.price;
-      console.log(cart , "CART")
       return cart;
     });
   }
+
+
+  public removeItemFromCart(item:Product){
+    this.cart.update((cart: ShoppingCart) => {
+      const existingItemIndex = cart.items.findIndex((i) => i.id === item.id);
+      if (existingItemIndex!== -1) {
+        if (cart.items[existingItemIndex].quantity > 1) {
+          cart.items[existingItemIndex].quantity--;
+        } else {
+          cart.items.splice(existingItemIndex, 1);
+        }
+        cart.totalAmount -= item.price;
+      }
+      return cart;
+    });
+  }
+
+
 }
