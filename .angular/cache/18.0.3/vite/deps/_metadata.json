@@ -1,0 +1,43 @@
+{
+  "hash": "d7688bd2",
+  "configHash": "0dcdc164",
+  "lockfileHash": "2449e817",
+  "browserHash": "12387768",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "83ff628b",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "a8e503d4",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "2611b061",
+      "needsInterop": false
+    },
+    "sweetalert2": {
+      "src": "../../../../../node_modules/sweetalert2/dist/sweetalert2.all.js",
+      "file": "sweetalert2.js",
+      "fileHash": "2497e5cd",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-MPZEFS5C": {
+      "file": "chunk-MPZEFS5C.js"
+    },
+    "chunk-ZXXMMPEI": {
+      "file": "chunk-ZXXMMPEI.js"
+    },
+    "chunk-WKYGNSYM": {
+      "file": "chunk-WKYGNSYM.js"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+%button{
+    @at-root{
+        %basic{
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: bold;
+            background: none;  
+            padding: 6px 14px;
+            margin-top: 5px;
+            line-height: 16px;
+            border-radius: 20px;
+        }
+    }
+}
