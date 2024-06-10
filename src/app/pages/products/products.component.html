@@ -1,0 +1,45 @@
+
+<div class="container-xl">
+	<div class="row mt-4">
+		<div class="col-md-12">
+			<h2>Featured <b>Products</b></h2>
+			<div id="myproduct-main-cnt" class="product-main-cnt" data-ride="product-main-cnt" data-interval="0">
+			<!-- Wrapper for product-main-cnt items -->
+			<div class="product-main-cnt-inner">
+                
+				<div class="item product-main-cnt-item active">
+					<div class="row">
+                        @for(key of products; track $index){
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+								<div class="img-box">
+									<img [src]="key.imageUrl" class="img-fluid" alt="">									
+								</div>
+								<div class="thumb-content">
+									<h4>{{key.name}}</h4>									
+									<div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+										</ul>
+									</div>
+									<p class="item-price"><b>${{key.price}}</b></p>
+									<a class="btn btn-primary" (click)="addToCart(key)">{{ isProductInCart(key) ? 'Add More' : 'Add to Cart' }}
+                                    </a>
+								</div>						
+							</div>
+						</div>
+                    }
+					</div>
+				</div>
+			
+			</div>
+		
+		</div>
+		</div>
+	</div>
+</div>
