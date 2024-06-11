@@ -1,31 +1,31 @@
 {
-  "hash": "d7688bd2",
+  "hash": "a52469be",
   "configHash": "0dcdc164",
-  "lockfileHash": "2449e817",
-  "browserHash": "12387768",
+  "lockfileHash": "0e796acc",
+  "browserHash": "3af19ced",
   "optimized": {
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "83ff628b",
+      "fileHash": "206d186a",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "a8e503d4",
+      "fileHash": "ccc1f34d",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "2611b061",
+      "fileHash": "fa57d4cf",
       "needsInterop": false
     },
     "sweetalert2": {
       "src": "../../../../../node_modules/sweetalert2/dist/sweetalert2.all.js",
       "file": "sweetalert2.js",
-      "fileHash": "2497e5cd",
+      "fileHash": "8f80ba20",
       "needsInterop": true
     }
   },

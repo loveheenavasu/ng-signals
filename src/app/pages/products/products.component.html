@@ -2,15 +2,15 @@
 <div class="container-xl">
 	<div class="row mt-4">
 		<div class="col-md-12">
-			<h2>Featured <b>Products</b></h2>
+			<h2>Featured <b> Products</b></h2>
 			<div id="myproduct-main-cnt" class="product-main-cnt" data-ride="product-main-cnt" data-interval="0">
 			<!-- Wrapper for product-main-cnt items -->
 			<div class="product-main-cnt-inner">
-                
+                <h3></h3>
 				<div class="item product-main-cnt-item active">
 					<div class="row">
                         @for(key of products; track $index){
-						<div class="col-sm-3">
+						<div class="col-sm-3 my-3">
 							<div class="thumb-wrapper">
 								
 								<div class="img-box">
@@ -33,6 +33,8 @@
 								</div>						
 							</div>
 						</div>
+
+						
                     }
 					</div>
 				</div>

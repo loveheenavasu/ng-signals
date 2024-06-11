@@ -31,7 +31,7 @@ export class ProductsComponent {
       toast: true,
       position: "bottom-end",
       showConfirmButton: false,
-      timer: 3000,
+      timer: 2000,
       timerProgressBar: true,
       didOpen: (toast:any) => {
         toast.onmouseenter = Swal.stopTimer;
@@ -43,6 +43,6 @@ export class ProductsComponent {
       text: "Added to cart!"
     });
     
-    // this.router.navigateByUrl('/my-cart')
+    this.router.navigateByUrl('/my-cart')
   }
 }

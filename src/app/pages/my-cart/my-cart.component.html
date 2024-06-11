@@ -1,4 +1,4 @@
-<div class="container-xl">
+<div class="container">
   <div class="row mt-4">
     <div class="col-md-12">
       <h2>My <b>Cart</b></h2>
@@ -17,7 +17,7 @@
             </div>
             <div class="ms-auto">
               <button
-                class="btn btn-outline-success my-2 my-sm-0 mx-4"
+                class="btn btn-outline-success my-2 mx-4"
                 (click)="backTo()">
                 Back To Shopping
               </button>
@@ -29,11 +29,19 @@
               @for(key of cartProducts; track $index){
               <div class="col-sm-3">
                 <div class="thumb-wrapper">
-                  <span class="wish-icon"
-                    ><i
-                      class="fa fa-minus-square-o"
-                      (click)="removeQuanity(key)"></i
-                  ></span>
+                  <div class="d-flex">
+                    <div>
+                      <span class="wish-icon"
+                        ><i
+                          class="fa fa-minus-square-o"
+                          (click)="decrementQuantity(key)"></i>
+                        <i
+                          style="margin-left: 10px"
+                          class="fa fa-plus-square-o"
+                          (click)="incrementQuantity(key)"></i
+                      ></span>
+                    </div>
+                  </div>
                   <div class="img-box">
                     <img [src]="key.imageUrl" class="img-fluid" alt="" />
                   </div>
@@ -71,16 +79,16 @@
                 </div>
               </div>
               } @if(!cartProducts.length){
-              <p style="margin-top: 5em">
+              <p style="margin-top: 5em;text-align: center;">
                 Oops! You haven't added any product yet! 😞
               </p>
               }
             </div>
             @if(cartProducts.length){
             <div class="row mt-5">
-              <table class="table">
+              <table class="table table-bordered border-basic">
                 <thead>
-                  <tr>
+                  <tr class="text-align:center">
                     <th scope="col">Product</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
@@ -92,10 +100,15 @@
                     <td>{{ key.name }}</td>
                     <td>{{ key.quantity }}</td>
                     <td>$ {{ key.price * key.quantity }}</td>
-                    <td></td>
                   </tr>
 
                   }
+                  <tr class="table-active">
+                    <th>Total Amount </th>
+                    <td></td>
+                    <th>$ {{ totalAmount }}</th>
+                    
+                  </tr>
                 </tbody>
               </table>
             </div>

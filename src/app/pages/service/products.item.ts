@@ -22,5 +22,29 @@ export const products:any[]=[
         name: 'Nikon DSLR',
         price: 250,
         imageUrl: 'https://i.pinimg.com/originals/6d/fc/da/6dfcda78e6445711dde808fa88afb22b.png'
+    },
+    {
+        id: 5,
+        name: 'Voltas Beko by A Tata Product 6.5 kg',
+        price: 400.00,
+        imageUrl: 'https://www.voltasbeko.com/media/catalog/product/w/f/wfl65w_1_1.png'
+    },
+    {
+        id: 6,
+        name: 'CADDLE & TOES Remote control Car ',
+        price: 23,
+        imageUrl: 'https://atlas-content-cdn.pixelsquid.com/stock-images/rc-car-radio-controlled-oJvvl4C-600.jpg'
+    },
+    {
+        id: 7,
+        name: 'Apple Iphone 14 Plus (Starlight 256GB)',
+        price: 20,
+        imageUrl: 'https://img-prd-pim.poorvika.com/cdn-cgi/image/width=500,height=500,quality=75/product/Apple-14-Plus-Starlight-Front-Back-01-1.png'
+    },
+    {
+        id: 8,
+        name: 'Tygot 10 Inches LED Ring Light for Camera',
+        price: 45,
+        imageUrl: 'https://gotygot.com/cdn/shop/files/hiahdiahd.jpg?v=1693308002'
     }
 ]

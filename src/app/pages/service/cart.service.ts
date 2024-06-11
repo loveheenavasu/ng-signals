@@ -13,6 +13,16 @@ export class CartService {
     totalAmount: 0
   });
 
+
+  constructor(){
+    this.getTotalAmount()
+  }
+
+
+public getTotalAmount(){
+return this.cart()
+}
+
   public getProducts() {
     return this.products();
   }
@@ -24,26 +34,24 @@ export class CartService {
   public addToCart(item: Product) {
     this.cart.update((cart: ShoppingCart) => {
       const existingItemIndex = cart.items.findIndex((i) => i.id === item.id);
-      if (existingItemIndex !== -1) {
-        cart.items[existingItemIndex].quantity++;
+      if (existingItemIndex!== -1) {
+        const existingItem = cart.items[existingItemIndex];
+        existingItem.quantity++;
+        cart.totalAmount += item.price; 
       } else {
         cart.items.push({...item, quantity: 1 });
+        cart.totalAmount += item.price; 
       }
-      cart.totalAmount += item.price;
+      cart.totalAmount = cart.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
       return cart;
     });
   }
-
 
   public removeItemFromCart(item:Product){
     this.cart.update((cart: ShoppingCart) => {
       const existingItemIndex = cart.items.findIndex((i) => i.id === item.id);
       if (existingItemIndex!== -1) {
-        if (cart.items[existingItemIndex].quantity > 1) {
-          cart.items[existingItemIndex].quantity--;
-        } else {
-          cart.items.splice(existingItemIndex, 1);
-        }
+        cart.items.splice(existingItemIndex, 1);
         cart.totalAmount -= item.price;
       }
       return cart;
@@ -55,13 +63,10 @@ export class CartService {
       const existingItemIndex = cart.items.findIndex((i) => i.id === item.id);
       if (existingItemIndex !== -1) {
         const existingItem = cart.items[existingItemIndex];
-        if (existingItem.quantity > 1) {
-          existingItem.quantity--;
-          cart.totalAmount -= item.price;
-        } else {
+     
           // If the quantity is already 0, remove the item from the cart
           cart.items.splice(existingItemIndex, 1);
-        }
+    
       }
       return cart;
     });

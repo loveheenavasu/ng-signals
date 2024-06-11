@@ -2,6 +2,7 @@ import { RouterOutlet } from '@angular/router';
 import { Component } from '@angular/core';
 import { ProductsComponent } from '../index';
 import { Router } from '@angular/router';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-main',
@@ -11,8 +12,11 @@ import { Router } from '@angular/router';
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
+  public cartProducts = this.cartService.getCartProducts().items;
 
-  constructor(private router:Router){}
+  constructor(private router:Router,private cartService:CartService){
+
+  }
 
   public myCart(){
     this.router.navigateByUrl('/my-cart')

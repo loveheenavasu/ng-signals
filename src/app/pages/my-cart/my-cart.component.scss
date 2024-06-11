@@ -27,12 +27,13 @@ h2::after {
 }
 .product-main-cnt .item {
 	color: #747d89;
-	min-height: 325px;
-	text-align: center;
-	overflow: hidden;
+	min-height: 525px;
+	// text-align: center;
+	// overflow: hidden;
 }
 .product-main-cnt .thumb-wrapper {
 	padding: 25px 15px;
+	height: 20em;
 	background: #fff;
 	border-radius: 6px;
 	text-align: center;
