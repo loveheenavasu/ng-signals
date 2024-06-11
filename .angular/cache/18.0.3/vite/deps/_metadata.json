@@ -1,40 +1,49 @@
 {
-  "hash": "a52469be",
-  "configHash": "0dcdc164",
+  "hash": "6734a7da",
+  "configHash": "64211e56",
   "lockfileHash": "0e796acc",
-  "browserHash": "3af19ced",
+  "browserHash": "3e4e0c41",
   "optimized": {
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "206d186a",
+      "fileHash": "760db55f",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "ccc1f34d",
+      "fileHash": "66d73755",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "fa57d4cf",
+      "fileHash": "f082d77a",
       "needsInterop": false
     },
     "sweetalert2": {
       "src": "../../../../../node_modules/sweetalert2/dist/sweetalert2.all.js",
       "file": "sweetalert2.js",
-      "fileHash": "8f80ba20",
+      "fileHash": "eb6ae948",
       "needsInterop": true
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "abfa528f",
+      "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-MPZEFS5C": {
-      "file": "chunk-MPZEFS5C.js"
+    "chunk-Y3TYQW3O": {
+      "file": "chunk-Y3TYQW3O.js"
     },
-    "chunk-ZXXMMPEI": {
-      "file": "chunk-ZXXMMPEI.js"
+    "chunk-KPHXC7CY": {
+      "file": "chunk-KPHXC7CY.js"
+    },
+    "chunk-4IU67IOL": {
+      "file": "chunk-4IU67IOL.js"
     },
     "chunk-WKYGNSYM": {
       "file": "chunk-WKYGNSYM.js"

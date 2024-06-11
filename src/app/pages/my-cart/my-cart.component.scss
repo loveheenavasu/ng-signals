@@ -25,6 +25,15 @@ h2::after {
 	margin: 7em auto;
 	padding: 0 70px;
 }
+
+.quantityInput{
+	width: 100%;
+    border: solid 1px rgb(161, 161, 161);
+    margin-left: 10px;
+    height: 30px;
+    border-radius: 2px;
+	font-size:13px;
+}
 .product-main-cnt .item {
 	color: #747d89;
 	min-height: 525px;
@@ -33,7 +42,7 @@ h2::after {
 }
 .product-main-cnt .thumb-wrapper {
 	padding: 25px 15px;
-	height: 20em;
+	height: 28em;
 	background: #fff;
 	border-radius: 6px;
 	text-align: center;
@@ -58,6 +67,7 @@ h2::after {
 }
 .product-main-cnt .item h4 {
 	font-size: 18px;
+	height:2.5em;
 }
 .product-main-cnt .item h4, .product-main-cnt .item p, .product-main-cnt .item ul {
 	margin-bottom: 5px;
@@ -104,10 +114,10 @@ h2::after {
 }
 
 .product-main-cnt .wish-icon {
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	z-index: 99;
+	// position: absolute;
+	// right: 10px;
+	// top: 10px;
+	// z-index: 99;
 	cursor: pointer;
 	font-size: 22px;
 	color: #abb0b8;

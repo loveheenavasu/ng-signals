@@ -45,4 +45,8 @@ export class ProductsComponent {
     
     this.router.navigateByUrl('/my-cart')
   }
+
+  public goToCartPage(){
+    this.router.navigateByUrl('/my-cart')
+  }
 }

@@ -15,7 +15,7 @@ export class MainComponent {
   public cartProducts = this.cartService.getCartProducts().items;
 
   constructor(private router:Router,private cartService:CartService){
-
+    console.log(this.cartProducts)
   }
 
   public myCart(){

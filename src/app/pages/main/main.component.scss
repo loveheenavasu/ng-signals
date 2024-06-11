@@ -1,9 +1,19 @@
-
 .cart-icon {
     z-index: 99;
     cursor: pointer;
     font-size: 30px;
     color: #4e7d00;
-    margin-right: 30px;
-    cursor:pointer
+    cursor: pointer;
+    position: relative;
+}
+
+
+.badge {
+    position: absolute;
+    background-color: rgb(255, 68, 68);
+    height: 19px;
+    font-size: 10px;
+    top: 2px;
+    border-radius: 100%;
+    right: 15px;
 }

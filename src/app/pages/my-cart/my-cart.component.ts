@@ -3,10 +3,11 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import Swal from "sweetalert2";
 import { Product } from "../service/product.interface";
+import {FormsModule} from '@angular/forms'
 @Component({
   selector: "app-my-cart",
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: "./my-cart.component.html",
   styleUrl: "./my-cart.component.scss",
 })
@@ -15,7 +16,7 @@ export class MyCartComponent {
   public totalAmount = this.cartService.getCartProducts().totalAmount;
   public price: any[] = [];
   public sumOfPrice:any
-
+  public quantity :any
   constructor(private cartService: CartService, private router: Router) {
     this.cartProducts.filter((res) => {
       const data = res.price;
@@ -49,6 +50,11 @@ export class MyCartComponent {
     item.quantity++;
 
 
+    this.calculateTotalAmount();
+  }
+
+  updateQuantity(item: Product): void {
+    item.quantity++;
     this.calculateTotalAmount();
   }
 

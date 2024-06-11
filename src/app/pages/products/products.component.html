@@ -28,7 +28,7 @@
 										</ul>
 									</div>
 									<p class="item-price"><b>${{key.price}}</b></p>
-									<a class="btn btn-primary" (click)="addToCart(key)">{{ isProductInCart(key) ? 'Add More' : 'Add to Cart' }}
+									<a class="btn btn-primary" (click)="isProductInCart(key) ? goToCartPage() : addToCart(key)">{{ isProductInCart(key) ? 'Go to Cart' : 'Add to Cart' }}
                                     </a>
 								</div>						
 							</div>

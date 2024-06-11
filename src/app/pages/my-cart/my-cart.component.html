@@ -1,4 +1,15 @@
+<div clss="mx-3 my-2" style="margin-left:10px">
+  <button
+    class="btn btn-outline-success my-2 "
+    (click)="backTo()">
+    Back To Shopping
+  </button>
+</div>
 <div class="container">
+  <div class="row">
+
+
+  </div>
   <div class="row mt-4">
     <div class="col-md-12">
       <h2>My <b>Cart</b></h2>
@@ -15,34 +26,15 @@
                 Total items in your cart : <b>{{ cartProducts.length }}</b>
               </h6>
             </div>
-            <div class="ms-auto">
-              <button
-                class="btn btn-outline-success my-2 mx-4"
-                (click)="backTo()">
-                Back To Shopping
-              </button>
-            </div>
+           
           </div>
 
           <div class="item product-main-cnt-item active">
             <div class="row">
               @for(key of cartProducts; track $index){
-              <div class="col-sm-3">
+              <div class="col-sm-3 my-3">
                 <div class="thumb-wrapper">
-                  <div class="d-flex">
-                    <div>
-                      <span class="wish-icon"
-                        ><i
-                          class="fa fa-minus-square-o"
-                          (click)="decrementQuantity(key)"></i>
-                        <i
-                          style="margin-left: 10px"
-                          class="fa fa-plus-square-o"
-                          (click)="incrementQuantity(key)"></i
-                      ></span>
-                    </div>
-                  </div>
-                  <div class="img-box">
+                  <div class="img-box mt-3">
                     <img [src]="key.imageUrl" class="img-fluid" alt="" />
                   </div>
                   <div class="thumb-content">
@@ -67,11 +59,29 @@
                       </ul>
                     </div>
                     <p class="item-price">
-                      <b>${{ key.price }} x {{ key.quantity }} </b>
+                      <b>${{ key.price }} </b>
                     </p>
 
+                    <div class="d-flex justify-content-center my-3">
+                      <div>
+                        <span class="wish-icon">
+                          <i class="fa fa-minus-square-o" (click)="decrementQuantity(key)"></i>
+                        </span>
+                      </div>
+                      <div>
+                        <input type="text" class="quantityInput" [(ngModel)]="key.quantity" (input)="updateQuantity(key)" style="width: 40px; text-align: center;">
+                      </div>
+                      <div class="mx-3">
+                        <span class="wish-icon">
+                          
+
+                          <i class="fa fa-plus-square-o" (click)="incrementQuantity(key)"></i>
+                        </span>
+                      </div>
+                    </div>
                     <button
                       class="btn btn-outline-danger my-3 my-sm-0 mx-4"
+                      style="margin-top:15px"
                       (click)="removeItem(key)">
                       Remove Item
                     </button>
@@ -90,14 +100,16 @@
                 <thead>
                   <tr class="text-align:center">
                     <th scope="col">Product</th>
-                    <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total Product Amount</th>
                   </tr>
                 </thead>
                 <tbody>
                   @for(key of cartProducts; track $index){
                   <tr>
                     <td>{{ key.name }}</td>
+                    <td>{{key.price}}</td>
                     <td>{{ key.quantity }}</td>
                     <td>$ {{ key.price * key.quantity }}</td>
                   </tr>
@@ -105,6 +117,7 @@
                   }
                   <tr class="table-active">
                     <th>Total Amount </th>
+                    <td></td>
                     <td></td>
                     <th>$ {{ totalAmount }}</th>
                     
